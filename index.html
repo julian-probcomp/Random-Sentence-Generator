@@ -38,29 +38,8 @@
 
 				<div class="top-padding">
 					<u class="section-label">Source text for model generation:</u>
-					<textarea rows="8" class="source-text" ng-model="source">
-						
-					<p><?php include('/sources.txt'); ?></p>
-					
-					<div><object data="/sources.txt"></object></div>
-						
-					<!--#include file="/sources.txt" -->
-						
-					<script>
-						var txtFile = new XMLHttpRequest();
-    var allText = "file not found";
-    txtFile.onreadystatechange = function () {
-        if (txtFile.readyState === XMLHttpRequest.DONE && txtFile.status == 200) {
-            allText = txtFile.responseText;
-            allText = allText.split("\n").join("<br>");
-        }
-
-        document.getElementById('txt').innerHTML = allText;
-    }
-    txtFile.open("GET", '/sources.txt', true);
-    txtFile.send(null);
-						</script>
-						
+					<textarea rows="8" class="source-text" ng-model="sources">
+					{{sources}}	
 					</textarea>
 					<span class="warning" ng-show="checkForErrorSource()">Please provide more than {{markovNumber}} characters in the input region above</span>
 				</div> 
