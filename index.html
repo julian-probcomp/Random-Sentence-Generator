@@ -40,11 +40,11 @@
 					<u class="section-label">Source text for model generation:</u>
 					<textarea rows="8" class="source-text" ng-model="source">
 						
-					<p><?php include('sources.txt'); ?></p>
+					<p><?php include('/sources.txt'); ?></p>
 					
-					<div><object data="sources.txt"></object></div>
+					<div><object data="/sources.txt"></object></div>
 						
-					<!--#include file="sources.txt" -->
+					<!--#include file="/sources.txt" -->
 						
 					</textarea>
 					<span class="warning" ng-show="checkForErrorSource()">Please provide more than {{markovNumber}} characters in the input region above</span>
